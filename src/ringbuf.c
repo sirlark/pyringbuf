@@ -87,6 +87,10 @@ static PyObject *RingBuffer_write(RingBuffer *self, PyObject *args) {
 	Py_ssize_t write_idx;
 
 	if (PyArg_ParseTuple(args, "s#", &s, &s_len)) {
+		if (s_len > self->size) {
+			PyErr_SetString(PyExc_ValueError, "s is larger than buffer size");
+			return NULL;
+		}
 		//TODO: Check for full buffer
 		write_idx = self->write_idx%self->size;
 		if (write_idx + s_len > self->size) {
