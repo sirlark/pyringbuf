@@ -1,5 +1,12 @@
 # pyringbuf
-A python extension implementing a circular/ring buffer of characters as a C extension. I overwrites silently.
+A python extension implementing a circular/ring buffer of characters as a C extension. It overwrites silently.
+
+##Availability
+
+Currently, pyringbuf is available at https://pypi.python.org/pypi/Ring-Buffer,
+or via "pip install Ring-Buffer". As this is a C extensions, there is a
+compilation step, so your system will need to be able to compile extension
+modules for python.
 
 ##Usage:
 
@@ -15,3 +22,13 @@ A python extension implementing a circular/ring buffer of characters as a C exte
     'f'
     >>> R.read(1)            #returns an empty string if the buffer is empty 
     ''
+
+##Implementation
+
+For the interested, this has been implemented as a pure C extension. The ring
+buffer itself is implemented as a fixed length array of chars (8-bit signed),
+dynamically allocated on the Python Heap on instatiation of a buffer. Read and
+write indexes both increase monotonically, and addresses in the array are
+determined using /index/ modulo /buffer size/. Writing more than the buffer
+size at once throws an exception, otherwise if writing overtakes read the read
+index, then the buffer is silently overwritten.
