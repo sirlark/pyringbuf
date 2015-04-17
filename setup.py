@@ -4,11 +4,12 @@ ringbuf = Extension('ringbuf', sources=["src/ringbuf.c"])
 
 setup(
     name = "pyringbuf",
-    version = "0.1b",
+    version = "0.1b0",
     description = "A circular/ring buffer written in C",
     ext_modules = [ringbuf],
     url = "https://github.com/sirlark/pyringbuf",
     author = "James Dominy",
+    author_email = "jgdominy+pyringbuf@gmail.com",
     license = "MIT",
     classifiers = [
         "Development Status :: 4 - Beta",
