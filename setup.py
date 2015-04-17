@@ -3,7 +3,7 @@ from setuptools import setup, Extension
 ringbuf = Extension('ringbuf', sources=["src/ringbuf.c"])
 
 setup(
-    name = "Ring Buffer",
+    name = "pyringbuf",
     version = "0.1",
     description = "A circular/ring buffer written in C",
     ext_modules = [ringbuf],
