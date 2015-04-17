@@ -38,6 +38,6 @@ For the interested, this has been implemented as a pure C extension. The ring
 buffer itself is implemented as a fixed length array of chars (8-bit signed),
 dynamically allocated on the Python Heap on instatiation of a buffer. Read and
 write indexes both increase monotonically, and addresses in the array are
-determined using /index/ modulo /buffer size/. Writing more than the buffer
+determined using *index* % (modulo) *buffer size*. Writing more than the buffer
 size at once throws an exception, otherwise if writing overtakes read the read
 index, then the buffer is silently overwritten.
