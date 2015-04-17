@@ -1,3 +1,4 @@
+=========
 pyringbuf
 =========
 
@@ -7,15 +8,16 @@ extension. It overwrites silently.
 Availability
 ------------
 
-Currently, pyringbuf is available at https://pypi.python.org/pypi/Ring-Buffer,
-or via "pip install Ring-Buffer". As this is a C extensions, there is a
+Currently, pyringbuf is available at https://pypi.python.org/pypi/pyringbuf,
+or via ``pip install pyringbuf``. As this is a C extensions, there is a
 compilation step, so your system will need to be able to compile extension
 modules for python.
 
 Usage
 -----
 
-:: 
+::
+
     >>> from ringbuf import RingBuffer
     >>> R = RingBuffer(5)    #choose your buffer size
     >>> R.push("a")          #push a single character into the buffer
